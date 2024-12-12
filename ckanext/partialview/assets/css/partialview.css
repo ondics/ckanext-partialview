@@ -1,0 +1,11 @@
+body {
+  /* width: 800px; */
+  max-height: 600px;
+  overflow-y: scroll;
+  font-family: monospace;
+  white-space: normal;
+}
+
+div.notice {
+  color: #6e6e6e;
+}

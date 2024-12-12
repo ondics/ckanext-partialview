@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block subtitle %}{% endblock %}
+
+{% block page %}
+{% set lines = h.partialview_read_text(resource_id, max_rows) %}
+<div class="notice">[Preview: first {{max_rows}} lines, format: text]</div>
+<div class="partialview textpreview">
+{% for line in lines %}
+{{ line }}
+{% endfor %}
+</div>
+{% asset 'ckanext-partialview/textpreview-css' %}
+{% endblock %}

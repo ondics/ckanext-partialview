@@ -1,0 +1,3 @@
+include README.md
+include requirements.txt
+recursive-include ckanext/partialview *.html *.json *.js *.less *.css *.mo *.yml *.yaml *.png *.jpg *.svg *.md

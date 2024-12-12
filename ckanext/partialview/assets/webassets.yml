@@ -1,0 +1,20 @@
+partialview-css:
+  output: ckanext-textview/%(version)s_partialview.css
+  contents:
+    - css/partialview.css
+
+textpreview-css:
+  output: ckanext-textview/%(version)s_textpreview.css
+  extra:
+    preload:
+      - ckanext-partialview/partialview-css
+  contents:
+    - css/textpreview.css
+
+csvpreview-css:
+  output: ckanext-textview/%(version)s_csvpreview.css
+  extra:
+    preload:
+      - ckanext-partialview/partialview-css
+  contents:
+    - css/csvpreview.css
