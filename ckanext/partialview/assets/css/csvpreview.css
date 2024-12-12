@@ -1,0 +1,32 @@
+div.csvpreview {
+    /* white-space: break-spaces; */
+    /* white-space: pre-line; */
+    /* word-break: normal; */
+}
+
+div.csvpreview table,
+div.csvpreview table th,
+div.csvpreview table tr,
+div.csvpreview table td {
+    border: 1px solid black;
+}
+
+div.csvpreview table th {
+    text-align: center;
+    font-weight: bold;
+}
+
+div.csvpreview table td,
+div.csvpreview table th {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+div.csvpreview table {
+    table-layout: fixed;
+}
+
+div.csvpreview table td {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}

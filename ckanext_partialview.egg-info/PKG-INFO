@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: ckanext-partialview
+Version: 0.1.0
+Summary: partial preview for various filetypes
+Home-page: 
+Author: Ondics GmbH
+Author-email: info@ondics.de
+License: AGPL
+Keywords: ckan fli ui
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 3

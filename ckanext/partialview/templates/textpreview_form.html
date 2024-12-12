@@ -1,0 +1,11 @@
+{% import 'macros/form.html' as form %}
+
+{% call form.input(
+    'max_rows',
+    id='field_max_rows',
+    label=_('Max Row'),
+    value=data.max_rows,
+    is_required='True') %}
+    {{ form.info(
+    _('Max Row shown in preview', classes=['info-help-tight'])) }}
+  {% endcall %}

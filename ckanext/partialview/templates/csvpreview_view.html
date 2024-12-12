@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block subtitle %}{% endblock %}
+
+{% block page %}
+<div class="notice">[Preview: first {{max_rows}} lines, format: html-table]</div>
+  <div class="partialview csvpreview">
+    {{ h.literal(h.partialview_read_csv(resource_id, max_rows)) }}
+  </div>
+  {% asset 'ckanext-partialview/csvpreview-css' %}
+{% endblock %}
