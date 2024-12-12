@@ -3,6 +3,8 @@
 
 12.12.2024:
 
+* ENH: Infotext in [] für views, mit Anzahl angezeigter Zeilen, hinzugefügt
+* ENH: Font monospace wird für beide views verwendet
 * ENH: View jetzt auch von Ressourcen möglich, die nur als Link eingebaut sind
 * ENH: Log und Error-Meldungen deutlicher geschrieben
 * ENH: View-Layout aktualisiert: Zeilenumbrüche, Font, Tabellenränder, ...
