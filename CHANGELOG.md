@@ -1,10 +1,14 @@
 # CHANGELOG
 
+## v0.2.0 - 10.01.2025
+
 10.01.2025:
 
 * ENH: Show default and max row values during view editing
 * ENH: Fix typo in preview_form.html
 * ENH: Neue Konfigurationseinstellung ckanext.partialview_max_rows
+
+## v0.1.0 - 12.12.2024
 
 12.12.2024:
 
