@@ -56,4 +56,4 @@ CKAN neustarten:
 
 keine Open Source, alle Rechte vorbehalten
 
-(C) 2024, Ondics GmbH
+(C) 2025, Ondics GmbH

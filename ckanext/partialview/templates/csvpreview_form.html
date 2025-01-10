@@ -1,11 +1,14 @@
 {% import 'macros/form.html' as form %}
 
+{% set max_value = h.partialview_max_rows_from_config() %}
+
 {% call form.input(
     'max_rows',
     id='field_max_rows',
-    label=_('Max Row'),
+    label=_('Max Rows (default 20, max '+ max_value +')'),
     value=data.max_rows,
+    placeholder=20,
     is_required='True') %}
     {{ form.info(
-    _('Max Row shown in preview', classes=['info-help-tight'])) }}
+    _('Max Rows shown in preview, the max value is '+ max_value +', higher values are automatically reduced to '+ max_value, classes=['info-help-tight'])) }}
   {% endcall %}

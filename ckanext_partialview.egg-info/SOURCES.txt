@@ -5,7 +5,6 @@ setup.cfg
 setup.py
 ckanext/__init__.py
 ckanext/partialview/__init__.py
-ckanext/partialview/config_declaration.yaml
 ckanext/partialview/plugin.py
 ckanext/partialview/assets/webassets.yml
 ckanext/partialview/assets/css/csvpreview.css

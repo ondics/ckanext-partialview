@@ -24,6 +24,7 @@ import ckan.lib.uploader as uploader
 default = cast(ValidatorFactory, toolkit.get_validator(u'default'))
 
 natural_number_validator = toolkit.get_validator(u'natural_number_validator')
+limit_to_configured_maximum = toolkit.get_validator(u'limit_to_configured_maximum')
 
 Invalid = df.Invalid
 
@@ -34,6 +35,10 @@ def is_natural_number(n):
         return isinstance(n, int) and n > 0
     except ValueError:
         raise Invalid(_('Please enter a Natural Number, n>=0'))
+
+def max_rows_from_config():
+    max_rows = toolkit.config.get('ckanext.partialview_max_rows', 20)
+    return max_rows
 
 def read_text(resource_id, max_rows):
     log.debug("################################################")
@@ -134,6 +139,7 @@ class PartialViewPlugin(p.SingletonPlugin):
     
     def get_helpers(self):
         return {
+            'partialview_max_rows_from_config': max_rows_from_config,
             'partialview_read_text': read_text,
             'partialview_read_csv': read_csv
         }
@@ -152,7 +158,7 @@ class TextPreviewPlugin(PartialViewPlugin):
             'default_title': p.toolkit._('Text Preview'),
             'iframed': True,
             'schema': {
-                'max_rows': [default(self.max_rows), natural_number_validator]
+                'max_rows': [default(self.max_rows), natural_number_validator, limit_to_configured_maximum('ckanext.partialview_max_rows', 20)]
             }
         }
 
@@ -202,7 +208,7 @@ class CsvPreviewPlugin(PartialViewPlugin):
             'default_title': p.toolkit._('CSV Preview'),
             'iframed': True,
             'schema': {
-                'max_rows': [default(self.max_rows), natural_number_validator]
+                'max_rows': [default(self.max_rows), natural_number_validator, limit_to_configured_maximum('ckanext.partialview_max_rows', 20)]
             }
         }
 

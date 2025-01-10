@@ -3,29 +3,21 @@ from setuptools import setup, find_packages  # Always prefer setuptools over dis
 from codecs import open  # To use a consistent encoding
 from os import path
 
+VERSION = '0.1.0'
+
 here = path.abspath(path.dirname(__file__))
 
 setup(
     name='''ckanext-partialview''',
-
-    # Versions should comply with PEP440.  For a discussion on single-sourcing
-    # the version across setup.py and the project code, see
-    # http://packaging.python.org/en/latest/tutorial.html#version
-    version='0.1.0',
-
+    version=VERSION,
     description='''partial preview for various filetypes''',
     long_description='',
-
     # The project's main homepage.
     url='',
-
     # Author details
     author='''Ondics GmbH''',
     author_email='''info@ondics.de''',
-
-    # Choose your license
     license='AGPL',
-
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         # How mature is this project? Common values are
@@ -44,7 +36,7 @@ setup(
 
 
     # What does your project relate to?
-    keywords='''ckan fli ui''',
+    keywords='''ckan view partial csv text ui''',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
