@@ -1,31 +1,36 @@
 # CHANGELOG
 
-## v0.2.0 - 10.01.2025
+2025-01-10:
 
-10.01.2025:
+* ENH: Remove logs used during development
+* ENH: Update Readme and Changelog
+
+## v0.2.0 - 2025-01-10
+
+2025-01-10:
 
 * ENH: Show default and max row values during view editing
-* ENH: Fix typo in preview_form.html
-* ENH: Neue Konfigurationseinstellung ckanext.partialview_max_rows
+* FIX: Fix typo in preview_form.html
+* ENH: New config option ckanext.partialview_max_rows
 
-## v0.1.0 - 12.12.2024
+## v0.1.0 - 2024-12-12
 
-12.12.2024:
+2024-12-12:
 
-* ENH: Infotext in [] für views, mit Anzahl angezeigter Zeilen, hinzugefügt
-* ENH: Font monospace wird für beide views verwendet
-* ENH: View jetzt auch von Ressourcen möglich, die nur als Link eingebaut sind
-* ENH: Log und Error-Meldungen deutlicher geschrieben
-* ENH: View-Layout aktualisiert: Zeilenumbrüche, Font, Tabellenränder, ...
+* ENH: Add view info text in [], shows number of displayed lines
+* ENH: Usage of Font monospace for both views
+* ENH: Add support for link only ressources
+* ENH: Improved log and error messages
+* ENH: Update view layout - line breaks, font, table borders, ...
 
-11.12.2024:
+2024-12-11:
 
-* ENH: Basis View Plugin partialview erstellt aus dem sich textpreview und csvpreview ableiten
-* ENH: View wird jetzt, wenn möglich direkt aus filestore bezogen und nicht mehr über API
+* ENH: Create simple view plugin partialview from which textpreview and csvpreview are derived
+* ENH: Update view to obtain files directly from filestore and no longer from API 
 
-10.10.2024:
+2024-10-10:
 
-* ENH: dem textpreview weitere Dateiformate wie json, xml und rdf hinzugefügt
-* ENH: Anpassungen neue Views für text und für csv
-* ENH: Basisextension aus der text_view Extension erstellt
+* ENH: Additional file formats: json, xml and rdf for textpreview
+* ENH: Visual Update for textpreview and csvpreview
+* ENH: Create basic extension from text_view extension
 * ENH: Inital Commit
