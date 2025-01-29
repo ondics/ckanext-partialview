@@ -5,4 +5,4 @@
 *.log
 
 # egg-folder / files
-*.egg-info
+*.egg-info/
