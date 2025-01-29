@@ -1,6 +1,0 @@
-[babel.extractors]
-ckan = ckan.lib.extract:extract_ckan
-
-[ckan.plugins]
-csvpreview = ckanext.partialview.plugin:CsvPreviewPlugin
-textpreview = ckanext.partialview.plugin:TextPreviewPlugin

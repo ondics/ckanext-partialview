@@ -24,6 +24,7 @@ import ckan.lib.uploader as uploader
 default = cast(ValidatorFactory, toolkit.get_validator(u'default'))
 
 natural_number_validator = toolkit.get_validator(u'natural_number_validator')
+limit_to_configured_maximum = toolkit.get_validator(u'limit_to_configured_maximum')
 
 Invalid = df.Invalid
 
@@ -35,10 +36,11 @@ def is_natural_number(n):
     except ValueError:
         raise Invalid(_('Please enter a Natural Number, n>=0'))
 
+def max_rows_from_config():
+    max_rows = toolkit.config.get('ckanext.partialview_max_rows', 20)
+    return max_rows
+
 def read_text(resource_id, max_rows):
-    log.debug("################################################")
-    log.debug(resource_id)
-    log.debug(max_rows)
     try:
         rsc = logic.get_action(u'resource_show')(data_dict={u'id': resource_id})
     except logic.NotFound as e:
@@ -53,15 +55,12 @@ def read_text(resource_id, max_rows):
             return [line.strip() for line in islice(file, max_rows)]
     
     elif not rsc.get(u'url_type'):
-        log.debug("################################################")
-        log.debug( "URL Link")
         # return ""
         try:
             response = requests.get(rsc.get(u'url'), stream=True, timeout=10)  # Timeout setzen
             response.raise_for_status()  # HTTP-Fehler abfangen (z. B. 404, 500)
         except requests.exceptions.RequestException as e:
             # Fehler ins Log schreiben und leere Liste zurückgeben
-            log.debug(f"########################################################")
             log.debug(f"Cannot access resource at {rsc.get(u'url')}: {e}")
             return f"Cannot access resource at {rsc.get(u'url')}: {e}"
 
@@ -70,23 +69,18 @@ def read_text(resource_id, max_rows):
             for line in islice(response.iter_lines(decode_unicode=True), max_rows):  # Nur 20 Zeilen
                 zeilen.append(line.strip())
         except Exception as e:
-            log.debug(f"########################################################")
             log.debug(f"Fehler beim Verarbeiten der Datei: {e}")
             return []
         return zeilen
 
     elif u'url' not in rsc:
-        log.debug( "No download is available")
+        log.debug( "No download available")
         return []
 
     return []
 
 
 def read_csv(resource_id, max_rows):
-
-    log.debug("################################################")
-    log.debug(resource_id)
-    log.debug(max_rows)
     try:
         rsc = logic.get_action(u'resource_show')(data_dict={u'id': resource_id})
     except logic.NotFound as e:
@@ -101,8 +95,6 @@ def read_csv(resource_id, max_rows):
         return data.to_html()
 
     elif not rsc.get(u'url_type'):
-        log.debug("################################################")
-        log.debug( "URL Link")
         # return ""
         data = pandas.read_csv(rsc.get(u'url'), nrows=max_rows)
         return data.to_html()
@@ -134,6 +126,7 @@ class PartialViewPlugin(p.SingletonPlugin):
     
     def get_helpers(self):
         return {
+            'partialview_max_rows_from_config': max_rows_from_config,
             'partialview_read_text': read_text,
             'partialview_read_csv': read_csv
         }
@@ -152,7 +145,7 @@ class TextPreviewPlugin(PartialViewPlugin):
             'default_title': p.toolkit._('Text Preview'),
             'iframed': True,
             'schema': {
-                'max_rows': [default(self.max_rows), natural_number_validator]
+                'max_rows': [default(self.max_rows), natural_number_validator, limit_to_configured_maximum('ckanext.partialview_max_rows', 20)]
             }
         }
 
@@ -165,12 +158,6 @@ class TextPreviewPlugin(PartialViewPlugin):
 
     def setup_template_variables(self, context: Context,
                                  data_dict: dict[str, Any]):
-
-        log.debug("################################################ data_dict: ")
-        log.debug(data_dict)
-        log.debug("################################################ context: ")
-        log.debug(context)
-
         resource_id = data_dict['resource']['id']
         max_rows = 20
         if data_dict['resource_view'].get('max_rows'):
@@ -202,7 +189,7 @@ class CsvPreviewPlugin(PartialViewPlugin):
             'default_title': p.toolkit._('CSV Preview'),
             'iframed': True,
             'schema': {
-                'max_rows': [default(self.max_rows), natural_number_validator]
+                'max_rows': [default(self.max_rows), natural_number_validator, limit_to_configured_maximum('ckanext.partialview_max_rows', 20)]
             }
         }
 
