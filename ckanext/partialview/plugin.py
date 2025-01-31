@@ -136,6 +136,7 @@ class TextPreviewPlugin(PartialViewPlugin):
 
     allowed_file_formats = ['text/plain', 'txt', 'plain', 'xml', 'rdf', 'rdf+xml', 'owl+xml', 'atom', 'rss', 'json', 'csv']
     max_rows = 20
+    max_rows_maximum = 20
 
     def info(self):
         return {
@@ -145,7 +146,8 @@ class TextPreviewPlugin(PartialViewPlugin):
             'default_title': p.toolkit._('Text Preview'),
             'iframed': True,
             'schema': {
-                'max_rows': [default(self.max_rows), natural_number_validator, limit_to_configured_maximum('ckanext.partialview_max_rows', 20)]
+                'max_rows': [default(self.max_rows), natural_number_validator,
+                    limit_to_configured_maximum('ckanext.partialview_max_rows', self.max_rows_maximum)]
             }
         }
 
@@ -180,6 +182,7 @@ class CsvPreviewPlugin(PartialViewPlugin):
 
     allowed_file_formats = ['csv']
     max_rows = 20
+    max_rows_maximum = 20
 
     def info(self):
         return {
@@ -189,7 +192,8 @@ class CsvPreviewPlugin(PartialViewPlugin):
             'default_title': p.toolkit._('CSV Preview'),
             'iframed': True,
             'schema': {
-                'max_rows': [default(self.max_rows), natural_number_validator, limit_to_configured_maximum('ckanext.partialview_max_rows', 20)]
+                'max_rows': [default(self.max_rows), natural_number_validator,
+                    limit_to_configured_maximum('ckanext.partialview_max_rows', self.max_rows_maximum)]
             }
         }
 

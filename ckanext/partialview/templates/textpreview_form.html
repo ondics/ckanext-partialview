@@ -5,10 +5,10 @@
 {% call form.input(
     'max_rows',
     id='field_max_rows',
-    label=_('Max Rows (default 20, max '+ max_value +')'),
+    label=_('Max rows (default 20, max '+ max_value +')'),
     value=data.max_rows,
     placeholder=20,
     is_required='True') %}
     {{ form.info(
-    _('Max Rows shown in preview, the max value is '+ max_value +', higher values are automatically reduced to '+ max_value, classes=['info-help-tight'])) }}
+    _('Max rows shown in preview, the max value is '+ max_value +', higher values are automatically reduced to '+ max_value, classes=['info-help-tight'])) }}
   {% endcall %}

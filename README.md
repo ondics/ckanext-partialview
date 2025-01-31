@@ -1,5 +1,7 @@
 # ckanext-partialview
 
+Enabling preview for very long `txt` and `csv` files.
+
 ## Getting started
 
 This extension adds two new resource views to your CKAN instance.  
@@ -75,7 +77,7 @@ If this variable is not set, the default value will be 20:
 
 ## License
 
-Released under the GNU Affero General Public License (AGPL) v3.0.
+To be released under Ondics / FLI special license.
 
 ## Author
 
