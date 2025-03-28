@@ -1,10 +1,6 @@
 # ckanext-partialview
 
-When uploading large files previewing the 
-entire file is not required in most cases. 
-Instead the first and last few lines should
-give insight about the file structure, columns,
-contents, and so on.
+When dealing with large file uploads, previewing the entire file is often unnecessary. Usually, viewing just the first and last few lines provides sufficient information about the file's structure, columns, and contents.
 
 This CKAN Extension enables resosurce previews 
 for large `txt` and `csv` files.
@@ -61,11 +57,11 @@ Restart CKAN container:
 
 ## Configuration
 
-This extension adds two new resource views to your CKAN instance.  
+This extension includes two new resource views to your CKAN instance.  
 
-**textpreview**: A view for file formats `text/plain`, `txt`, `plain`, `xml`, `rdf`, `rdf+xml`, `owl+xml`, `atom`, `rss`, `json` and `csv`.  
+**textpreview**: Supported for file formats such as `text/plain`, `txt`, `plain`, `xml`, `rdf`, `rdf+xml`, `owl+xml`, `atom`, `rss`, `json` and `csv`.  
 
-**csvpreview**: A view for `csv` files. 
+**csvpreview**: Specifically for  `csv` files. 
 
 Select the resource view in resource setting user interface.
 
@@ -75,11 +71,12 @@ This value may be configured using:
 
     ckanext.partialview_max_rows = 20
 
-Without any setting, the default is 20.
+If the setting is omitted, it defaults to 20.
 
 ## License
 
-Released under the GNU Affero General Public License (AGPL) v3.0. See the file LICENSE for details.
+Released under the GNU Affero General Public License (AGPL) v3.0. 
+See the file LICENSE for details.
 
 ## Author
 
