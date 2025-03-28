@@ -1,46 +1,17 @@
 # ckanext-partialview
 
-Enabling preview for very long `txt` and `csv` files.
+When uploading large files previewing the 
+entire file is not required in most cases. 
+Instead the first and last few lines should
+give insight about the file structure, columns,
+contents, and so on.
 
-## Getting started
+This CKAN Extension enables resosurce previews 
+for large `txt` and `csv` files.
 
-This extension adds two new resource views to your CKAN instance.  
-1. **textpreview**  
-A view for `text/plain`, `txt`, `plain`, `xml`, `rdf`, `rdf+xml`, `owl+xml`, `atom`, `rss`, `json` and `csv` files.  
-2. **csvpreview**  
-A view for `csv` files.   
-
-They can be added to your CKAN resources like any other view plugin.  
-In contrast to other view plugins though, these only show the first few lines of your resource file,  
-therefore allowing for a new preview style, especially useful for handling big files.
-
-During the creation or editing of one of the new views, you can set a value for the number of lines displayed in your resource view.  
-If added via `ckan.views.default_views` or without declaring a value, it will default to 20 lines.
-
-## Dependencies
-The extension ckanext-partialview was installed and tested in CKAN 2.10 and Python 3.
+Tested on CKAN 2.10 and 2.11
 
 ## Installation
-
-### Docker Installation
-
-Extract the ZIP file containing ckanext-partialview e.g.:
-
-    unzip ckanext-partialview.zip
-
-Copy and Install via Dockerfile:
-
-    COPY ckan-extensions/ $SRC_DIR
-    RUN cd $SRC_DIR/ckanext-partialview && \
-        python3 setup.py develop
-
-Add the following plugins from ckanext-partialview to `CKAN__PLUGINS` in the .env file:
-
-    CKAN__PLUGINS = "... textpreview csvpreview ..."
-
-Restart CKAN container:
-
-    docker restart ckan
 
 ### Source Installation
 
@@ -48,7 +19,7 @@ Extract the ZIP file containing ckanext-partialview e.g.:
 
     unzip ckanext-partialview.zip -d /usr/lib/ckan/default/src
 
-Activate the CKAN virtual environment:
+Activate your CKAN virtual environment:
 
     . /usr/lib/ckan/default/bin/activate
 
@@ -57,28 +28,59 @@ Install extension inside the virtual environment:
     cd ckanext-partialview
     pip install .
 
-Add the following plugins from ckanext-partialview to the CKAN config file,  
-usually located in `/etc/ckan/default/ckan.ini`.  
-Add to `ckan.plugins`:
+Make sure to add pages to ckan.plugins in your config file, located
+in `/etc/ckan/default/ckan.ini` by default:
 
     ckan.plugins = ... textpreview csvpreview ...
 
 Restart CKAN:
 
-    # e.g.:
     supervisorctl restart ckan-uwsgi:  
+
+
+### Installation using Docker
+
+Download and extract the ZIP file containing ckanext-partialview 
+in `./ckan-extensions` e.g.:
+
+    unzip ckanext-partialview.zip
+
+Copy and install via `Dockerfile`:
+
+    COPY ckan-extensions/ $SRC_DIR
+    RUN cd $SRC_DIR/ckanext-partialview && \
+        python3 setup.py develop
+
+Add the plugins to `CKAN__PLUGINS` in your .env file:
+
+    CKAN__PLUGINS = textpreview csvpreview
+
+Restart CKAN container:
+
+    docker restart ckan
 
 ## Configuration
 
-The max number of rows possible to be displayed can be customized in your config file.  
-If this variable is not set, the default value will be 20:  
+This extension adds two new resource views to your CKAN instance.  
+
+**textpreview**: A view for file formats `text/plain`, `txt`, `plain`, `xml`, `rdf`, `rdf+xml`, `owl+xml`, `atom`, `rss`, `json` and `csv`.  
+
+**csvpreview**: A view for `csv` files. 
+
+Select the resource view in resource setting user interface.
+
+The number of lines displayed is adjustable in the user 
+interface. By default, the first 20 lines are shown.
+This value may be configured using:
 
     ckanext.partialview_max_rows = 20
 
+Without any setting, the default is 20.
+
 ## License
 
-To be released under Ondics / FLI special license.
+Released under the GNU Affero General Public License (AGPL) v3.0. See the file LICENSE for details.
 
 ## Author
 
-(C) 2025, Ondics GmbH
+(C) 2025, Ondics GmbH on behaf of FLI Friedrich-Loeffler-Institut, Bundesforschungsinstitut für Tiergesundheit 
