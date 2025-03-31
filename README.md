@@ -75,7 +75,8 @@ If the setting is omitted, it defaults to 20.
 
 ## License
 
-Released under the GNU Affero General Public License (AGPL) v3.0. 
+Released under the GNU Affero General Public License v3.0 or later. 
+
 See the file LICENSE for details.
 
 ## Author
