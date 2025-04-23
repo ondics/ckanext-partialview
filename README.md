@@ -1,6 +1,13 @@
 # ckanext-partialview
 
-When dealing with large file uploads, previewing the entire file is often unnecessary. Usually, viewing just the first and last few lines provides sufficient information about the file's structure, columns, and contents.
+Partial View is a CKAN extension that limits the number of
+lines displayed for text files in a CKAN repository. 
+
+This is especially useful for large files such as CSV tables.
+
+By showing only the first few lines, it keeps the
+interface clean while still providing a clear overview of
+the file's content.
 
 This CKAN Extension enables resosurce previews 
 for large `txt` and `csv` files.
