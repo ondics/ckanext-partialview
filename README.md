@@ -81,4 +81,4 @@ See the file LICENSE for details.
 
 ## Author
 
-(C) 2025, Ondics GmbH on behaf of FLI Friedrich-Loeffler-Institut, Bundesforschungsinstitut für Tiergesundheit 
+(C) 2025, Ondics GmbH on behalf of FLI Friedrich-Loeffler-Institut, Bundesforschungsinstitut für Tiergesundheit 
