@@ -26,14 +26,11 @@ identifiers:
   - type: url
     value: >-
       https://gitlab.opencode.de/friedrich-loeffler-institut/fdm
-    description: Correct URL at OpenCode should be added later
-  - type: url
-    value: 'https://zenodo.org/uploads/15268675'
-    description: Final Zenodo URL should be placed here
+    description: The published version of the extension can be found at OpenCode. Correct URL at OpenCode should be added later
   - type: doi
     value: 10.5281/zenodo.15268675
-    description: Zenodo DOI for published version
-repository-code: 'https://github.com/friedrich-loeffler-institut'
+    description: The published version of the extension can be found at Zenodo. 
+repository-code: 'https://github.com/ondics/...'
 abstract: >-
   Partial View is a CKAN extension that limits the number of
   lines displayed for text files in a CKAN repository. This
@@ -46,6 +43,7 @@ keywords:
   - csv
   - txt
   - preview
+  - ckan-extension
 license: AGPL-3.0-or-later
-version: '1.0'
-date-released: '2025-04-23'
+version: 'v1.0.0'
+date-released: '2025-03-27'
