@@ -14,6 +14,10 @@ authors:
   - given-names: Wolfgang
     family-names: Clauss
     affiliation: Ondics GmbH
+  - given-names: Yana
+    family-names: Bodnar
+    affiliation: Friedrich-Loeffler-Institut
+    orcid: 'https://orcid.org/0000-0002-4059-7185'
   - given-names: Steffen
     family-names: Franke
     affiliation: Friedrich-Loeffler-Institut
