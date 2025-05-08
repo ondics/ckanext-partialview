@@ -1,6 +1,6 @@
 # ckanext-partialview
 
-Enabling preview for very long `txt` and `csv` files.
+CKAN extension to enable preview for long `txt` and `csv` files.
 
 ## Getting started
 
