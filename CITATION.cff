@@ -1,0 +1,53 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: ckanext-partialview
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Christopher
+    family-names: Rickelt
+    affiliation: Ondics GmbH
+  - given-names: Wolfgang
+    family-names: Clauss
+    affiliation: Ondics GmbH
+  - given-names: Yana
+    family-names: Bodnar
+    affiliation: Friedrich-Loeffler-Institut
+    orcid: 'https://orcid.org/0000-0002-4059-7185'
+  - given-names: Steffen
+    family-names: Franke
+    affiliation: Friedrich-Loeffler-Institut
+    orcid: 'https://orcid.org/0000-0002-2806-5055'
+  - given-names: Rainer
+    family-names: Cramm
+    affiliation: Friedrich-Loeffler-Institut
+    orcid: 'https://orcid.org/0000-0002-3630-3885'
+identifiers:
+  - type: url
+    value: >-
+      https://gitlab.opencode.de/friedrich-loeffler-institut/fdm
+    description: The published version of the extension can be found at OpenCode. Correct URL at OpenCode should be added later
+  - type: doi
+    value: 10.5281/zenodo.15268675
+    description: The published version of the extension can be found at Zenodo. 
+repository-code: 'https://github.com/ondics/...'
+abstract: >-
+  Partial View is a CKAN extension that limits the number of
+  lines displayed for text files in a CKAN repository. This
+  is especially useful for large files such as CSV tables.
+  By showing only the first few lines, it keeps the
+  interface clean while still providing a clear overview of
+  the file's content.
+keywords:
+  - ckan
+  - csv
+  - txt
+  - preview
+  - ckan-extension
+license: AGPL-3.0-or-later
+version: 'v1.0.0'
+date-released: '2025-03-27'

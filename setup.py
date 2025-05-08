@@ -3,14 +3,14 @@ from setuptools import setup, find_packages  # Always prefer setuptools over dis
 from codecs import open  # To use a consistent encoding
 from os import path
 
-VERSION = '0.2.0'
+VERSION = '1.0.0'
 
 here = path.abspath(path.dirname(__file__))
 
 setup(
     name='''ckanext-partialview''',
     version=VERSION,
-    description='''partial preview for various filetypes''',
+    description='''partial preview for large txt and csv resources''',
     long_description='',
     # The project's main homepage.
     url='',
@@ -24,7 +24,7 @@ setup(
         # 3 - Alpha
         # 4 - Beta
         # 5 - Production/Stable
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
 
         # Pick your license as you wish (should match "license" above)
         'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',
