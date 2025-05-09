@@ -1,0 +1,154 @@
+# This repository adheres to the publiccode.yml standard by including this 
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '0.2'
+name: ckanext-partialview
+applicationSuite: CKAN
+url: 'https://github.com/ondics/ckanext-partialview'
+releaseDate: '2025-05-08'
+developmentStatus: stable
+softwareType: addon
+platforms:
+  - linux
+maintenance:
+  type: internal
+  contacts:
+    - name: Ondics GmbH
+      email: info@ondics.de
+      phone: '+49711310093100'
+legal:
+  license: AGPL-3.0-only
+  mainCopyrightOwner: Ondics GmbH
+localisation:
+  localisationReady: false
+description:
+  it:
+    genericName: CKAN Extension
+    longDescription: >2
+       CKAN extension to enable preview for long `txt` and `csv` files.
+
+      In txt/csv previews this extensions limits the number of lines displayed
+      for text files in a CKAN repository.
+
+
+      This is especially useful for large files such as CSV tables.
+
+
+      By showing only the first few lines, it keeps the interface clean while
+      still providing a clear overview of the file's content.
+
+
+      This CKAN Extension enables resosurce previews for large `txt` and `csv`
+      files.
+
+
+      Tested on CKAN 2.10 and 2.11
+
+
+      ## Installation
+
+
+      ### Source Installation
+
+
+      Extract the ZIP file containing ckanext-partialview e.g.:
+
+          unzip ckanext-partialview.zip -d /usr/lib/ckan/default/src
+
+
+      Activate your CKAN virtual environment:
+
+          . /usr/lib/ckan/default/bin/activate
+
+
+      Install extension inside the virtual environment:
+
+          cd ckanext-partialview
+      pip install .
+
+
+
+      Make sure to add pages to ckan.plugins in your config file, located in
+      `/etc/ckan/default/ckan.ini` by default:
+
+          ckan.plugins = ... textpreview csvpreview ...
+
+
+      Restart CKAN:
+
+          supervisorctl restart ckan-uwsgi:  
+
+
+      ### Installation using Docker
+
+
+      Download and extract the ZIP file containing ckanext-partialview in
+      `./ckan-extensions` e.g.:
+
+          unzip ckanext-partialview.zip
+
+
+      Copy and install via `Dockerfile`:
+
+          COPY ckan-extensions/ $SRC\_DIR
+      RUN cd $SRC\_DIR/ckanext-partialview && \
+          python3 setup.py develop
+
+
+      Add the plugins to `CKAN\_\_PLUGINS` in your .env file:
+
+          CKAN\_\_PLUGINS = textpreview csvpreview
+
+
+      Restart CKAN container:
+
+          docker restart ckan
+
+
+      ## Configuration
+
+
+      This extension includes two new resource views to your CKAN instance.
+
+
+      **textpreview**: Supported for file formats such as `text/plain`, `txt`,
+      `plain`, `xml`, `rdf`, `rdf+xml`, `owl+xml`, `atom`, `rss`, `json` and
+      `csv`.
+
+
+      **csvpreview**: Specifically for  `csv` files.
+
+
+      Select the resource view in resource setting user interface.
+
+
+      The number of lines displayed is adjustable in the user interface. By
+      default, the first 20 lines are shown. This value may be configured using:
+
+          ckanext.partialview\_max\_rows = 20
+
+
+      If the setting is omitted, it defaults to 20.
+
+
+      ## License
+
+
+      Released under the GNU Affero General Public License v3.0 or later.
+
+
+      See the file LICENSE for details.
+
+
+      ## Author
+
+
+      (C) 2025, Ondics GmbH on behalf of FLI Friedrich-Loeffler-Institut,
+      Bundesforschungsinstitut für Tiergesundheit 
+    shortDescription: CKAN extension to enable preview for long txt and csv files
+categories:
+  - data-collection
+  - data-visualization
+  - data-analytics
+  - content-management
