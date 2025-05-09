@@ -38,7 +38,7 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.15268675
     description: An archived version with a DOI is available on Zenodo.
-repository-code: 'https://github.com/ondics/...'
+repository-code: https://github.com/ondics/ckanext-partialview
 abstract: >-
   Partial View is a CKAN extension that limits the number of
   lines displayed for text files in a CKAN repository. This
