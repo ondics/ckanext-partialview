@@ -29,11 +29,15 @@ authors:
 identifiers:
   - type: url
     value: >-
-      https://gitlab.opencode.de/friedrich-loeffler-institut/fdm
-    description: The published version of the extension can be found at OpenCode. Correct URL at OpenCode should be added later
+      https://github.com/ondics/ckanext-partialview
+    description: The working copy of the extension is maintained on GitHub.
+  - type: url
+    value: >-
+      https://gitlab.opencode.de/friedrich-loeffler-institut/fdm/ckanext-partialview
+    description: The released version is published on OpenCode.
   - type: doi
     value: 10.5281/zenodo.15268675
-    description: The published version of the extension can be found at Zenodo. 
+    description: An archived version with a DOI is available on Zenodo.
 repository-code: 'https://github.com/ondics/...'
 abstract: >-
   Partial View is a CKAN extension that limits the number of
