@@ -11,7 +11,7 @@ By showing only the first few lines, it keeps the
 interface clean while still providing a clear overview of
 the file's content.
 
-This CKAN Extension enables resosurce previews 
+This CKAN Extension enables resource previews 
 for large `txt` and `csv` files.
 
 Tested on CKAN 2.10 and 2.11
