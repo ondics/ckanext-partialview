@@ -16,6 +16,11 @@ for large `txt` and `csv` files.
 
 Tested on CKAN 2.10 and 2.11
 
+Published on
+
+* Github: https://github.com/ondics/ckanext-partialview (major,minor,patch releases)
+* OpenCode: https://gitlab.opencode.de/friedrich-loeffler-institut/fdm/ckanext-partialview (major/minor releases)
+
 ## Installation
 
 ### Source Installation
